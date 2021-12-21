@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using INIManager;
 
 namespace HilSuHub
 {
@@ -29,6 +30,19 @@ namespace HilSuHub
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists(Directory.GetCurrentDirectory() + "\\settings.ini") == false)
+            {
+                WebClient web = new WebClient();
+                try
+                {
+                    web.DownloadFile("http://api.kolyaservices.cf/hilsu/settings.ini", "settings.ini");
+                }
+                catch (Exception WebException)
+                {
+                    web.DownloadFile("http://nsp.mygamesonline.org/api/hilsu/settings.ini", "settings.ini");
+                }
+            }
+
             // Топ 1 по червонцам
             HttpWebResponse response1 = (HttpWebResponse)WebRequest.Create($"https://api.hil.su/v2/economy/top?limit=1&currency=coins").GetResponse(); // Первый запрос
 
@@ -56,6 +70,12 @@ namespace HilSuHub
         class JSON
         {
             public bool success { get; set; }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pBalance balance = new pBalance();
+            balance.Show();
         }
     }
 }

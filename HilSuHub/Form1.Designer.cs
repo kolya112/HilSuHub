@@ -34,8 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.top1csum = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.top1cnick = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.top1cnick);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.top1csum);
@@ -97,6 +99,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(471, 413);
             this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(370, 173);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Баланс игрока";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // top1cnick
+            // 
+            this.top1cnick.AutoSize = true;
+            this.top1cnick.Location = new System.Drawing.Point(16, 31);
+            this.top1cnick.Name = "top1cnick";
+            this.top1cnick.Size = new System.Drawing.Size(71, 13);
+            this.top1cnick.TabIndex = 4;
+            this.top1cnick.Text = "Игровой ник";
             // 
             // label5
             // 
@@ -107,15 +128,6 @@
             this.label5.Size = new System.Drawing.Size(159, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Топ 1 по червонцам";
-            // 
-            // top1cnick
-            // 
-            this.top1cnick.AutoSize = true;
-            this.top1cnick.Location = new System.Drawing.Point(16, 31);
-            this.top1cnick.Name = "top1cnick";
-            this.top1cnick.Size = new System.Drawing.Size(71, 13);
-            this.top1cnick.TabIndex = 4;
-            this.top1cnick.Text = "Игровой ник";
             // 
             // Form1
             // 
@@ -149,6 +161,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label top1cnick;
+        private System.Windows.Forms.Button button1;
     }
 }
 
