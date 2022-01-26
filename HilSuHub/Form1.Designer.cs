@@ -32,10 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.top1csum = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.coinstop = new System.Windows.Forms.ListView();
+            this.nickname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.balance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.top1cnick = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,26 +80,38 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "HiTech";
             // 
-            // top1csum
-            // 
-            this.top1csum.AutoSize = true;
-            this.top1csum.Location = new System.Drawing.Point(102, 31);
-            this.top1csum.Name = "top1csum";
-            this.top1csum.Size = new System.Drawing.Size(140, 13);
-            this.top1csum.TabIndex = 2;
-            this.top1csum.Text = "Сумма личного состояния";
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.coinstop);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.top1cnick);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.top1csum);
             this.panel2.Location = new System.Drawing.Point(317, 25);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(471, 413);
             this.panel2.TabIndex = 3;
+            // 
+            // coinstop
+            // 
+            this.coinstop.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nickname,
+            this.balance});
+            this.coinstop.HideSelection = false;
+            this.coinstop.Location = new System.Drawing.Point(11, 24);
+            this.coinstop.Name = "coinstop";
+            this.coinstop.Size = new System.Drawing.Size(353, 220);
+            this.coinstop.TabIndex = 7;
+            this.coinstop.UseCompatibleStateImageBehavior = false;
+            this.coinstop.View = System.Windows.Forms.View.Details;
+            // 
+            // nickname
+            // 
+            this.nickname.Text = "Игровой ник";
+            this.nickname.Width = 285;
+            // 
+            // balance
+            // 
+            this.balance.Text = "Баланс";
             // 
             // button1
             // 
@@ -110,24 +123,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // top1cnick
-            // 
-            this.top1cnick.AutoSize = true;
-            this.top1cnick.Location = new System.Drawing.Point(16, 31);
-            this.top1cnick.Name = "top1cnick";
-            this.top1cnick.Size = new System.Drawing.Size(71, 13);
-            this.top1cnick.TabIndex = 4;
-            this.top1cnick.Text = "Игровой ник";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(34, 4);
+            this.label5.Location = new System.Drawing.Point(152, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 17);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Топ 1 по червонцам";
+            this.label5.Text = "Топ 5 по червонцам";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Form1
             // 
@@ -157,11 +162,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label top1csum;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label top1cnick;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView coinstop;
+        private System.Windows.Forms.ColumnHeader nickname;
+        private System.Windows.Forms.ColumnHeader balance;
     }
 }
 
